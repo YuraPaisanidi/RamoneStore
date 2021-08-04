@@ -1,0 +1,118 @@
+
+//----------------------fonts---------------------
+$fonts: 'EuclidSquare', sans-serif
+//---------------------end-fonts---------------------
+
+//----------------------color---------------------
+$accent: #808080
+$text: #9A9A9A
+$bg: #181D24
+$title: #ffffff
+//---------------------end-color---------------------
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 320px
+	font-family: $fonts
+	font-size: 16px
+	color: $text
+	line-height: 1.4
+	font-weight: 400
+	min-height: 100vh
+	background-color: $bg
+
+::selection
+	background-color: $accent
+	color: #fff
+
+::placeholder
+	color: #666
+	
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.2
+	margin: 0
+	padding: 0
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+
+a,
+button
+	+transition
+	color: $text
+	background-color: transparent
+
+	&:hover
+		outline: none
+		text-decoration: none
+		outline: none
+		color: $accent
+
+button
+	border: 0
+
+input, textarea, select, option
+	+transition
+	outline: none
+	box-shadow: none
+	border: 1px solid #000
+	// -webkit-appearance: none
+	
+	&:focus:required:invalid
+		border-color: red
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&:required:valid
+		border-color: green
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&::placeholder
+		color: $text
+
+textarea
+	width: 100%
+	height: 190px
+	padding: 5px 10px
+	size: none
+
+
+
+*
+	&::-webkit-scrollbar
+		width: 7px
+		height: 8px
+		background-color: #D7D6D6
+		cursor: pointer
+
+	&::-webkit-scrollbar-thumb
+		background-color: $accent
+
+	&::-webkit-scrollbar-thumb:hover
+		background-color: $accent
+
+	&::-webkit-scrollbar-button:vertical:start:decrement
+		background-color: #f6f8f4
+
+	&::-webkit-scrollbar-button:vertical:end:increment
+		background-color: #f6f8f4
+
+	&::-webkit-scrollbar-button:horizontal:start:decrement
+		background-color: #f6f8f4
+
+	&::-webkit-scrollbar-button:horizontal:end:increment
+		background-color: #f6f8f4
