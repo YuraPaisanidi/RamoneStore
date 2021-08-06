@@ -11,22 +11,14 @@
 	grid-template: minmax(100px, auto) 1fr minmax(100px, auto) / 1fr
 	grid-template-areas: 'header' 'main' 'footer'
 	grid-gap: 50px
-	overflow: hidden
-
-	+r(1430)
-		grid-gap: 25px
+	// overflow: hidden
 
 	+r(1750)
 		max-width: 1430px
 
 	+r(1430)
 		max-width: 1200px
-
-	+r(1200)
-		max-width: 992px
-
-	+r(1200)
-		max-width: 992px
+		grid-gap: 25px
 
 	+r(1200)
 		max-width: 992px
@@ -46,12 +38,12 @@
 	display: flex
 	justify-content: center
 	align-items: center
-	min-height: 60px
+	min-height: 50px
 	max-width: 300px
 	width: 100%
-	border: 1px solid $accent
-	background-color: $accent
-	padding: 0 15px
+	// border: 1px solid $accent
+	// background-color: $accent
+	// padding: 0 15px
 	font-size: 16px
 	color: #fff
 	font-weight: 600
@@ -61,10 +53,8 @@
 		min-height: 50px
 
 	&:hover
-		border: 1px solid $accent
-		background: $accent
-		color: #fff
-		box-shadow: 0px 0px 20px #DE0300
+		color: $title
+		box-shadow: 0px 0px 5px #ffffff
 
 	&:active
 		border: 1px solid #fff
@@ -94,6 +84,10 @@
 
 	+r(992)
 		display: flex
+		margin-right: 32px
+
+	+r(768)
+		margin-right: 0
 
 	&__item
 		position: absolute
@@ -152,26 +146,29 @@
 
 .h1
 	font-size: 42px
-	font-weight: 700
+	font-weight: 400
+	color: $title
 
 	+r(1200)
 		font-size: 36px
 
 
 .header
-	grid-area: header
-	display: grid
-	grid-template: 1fr minmax(100px, auto) minmax(60px, auto) / 1fr
-	grid-template-areas: 'header__sidebar' 'header__nav' 'header__label'
+	display: flex
+	flex-direction: column
+	// grid-area: header
+	// display: grid
+	// grid-template: 1fr minmax(100px, auto) minmax(60px, auto) / 1fr
+	// grid-template-areas: 'header__sidebar' 'header__nav'
 	max-width: 100%
 
-	+r(1430)
-		grid-template: 1fr minmax(75px, auto) minmax(40px, auto) / 1fr
-		grid-template-areas: 'header__sidebar' 'header__nav' 'header__label'
+	// +r(1430)
+	// 	grid-template: 1fr minmax(75px, auto) minmax(40px, auto) / 1fr
+	// 	grid-template-areas: 'header__sidebar' 'header__nav' 'header__label'
 
-	+r(992)
-		grid-template: 1fr minmax(40px, auto) / 1fr
-		grid-template-areas: 'header__sidebar' 'header__label'
+	// +r(992)
+	// 	grid-template: 1fr minmax(40px, auto) / 1fr
+	// 	grid-template-areas: 'header__sidebar' 'header__label'
 
 	&__sidebar
 		display: flex
@@ -201,7 +198,6 @@
 
 				&:hover
 					color: #fff
-					background-color: $accent
 			
 			img
 				margin-right: 5px
@@ -258,14 +254,16 @@
 			height: auto
 
 	&__nav
-		grid-area: header__nav
-		display: grid
-		grid-template: 1fr / 1fr minmax(515px, auto)
-		grid-gap: 3px
+		// grid-area: header__nav
+		// display: grid
+		// grid-template: 1fr / 1fr minmax(515px, auto)
+		// grid-gap: 3px
+		display: flex
+		justify-content: space-between
 		z-index: 1
-		border-top: 1px solid #C4C4C4
-		border-bottom: 1px solid #C4C4C4
-		max-height: 70px
+		border-top: 1px solid $border
+		border-bottom: 1px solid $border
+		height: 70px
 		+transition
 
 		+r(1430)
@@ -291,12 +289,11 @@
 			padding: 20px
 
 		&_menu
-			display: grid
-			grid-auto-flow: column
+			display: flex
+			justify-content: space-between
 			grid-gap: 3px
 
 			+r(992)
-				display: flex
 				flex-direction: column
 				gap: 10px
 				order: 1
@@ -331,7 +328,7 @@
 					text-align: left
 					justify-content: flex-start
 					color: $title
-					border: 1px solid #C4C4C4
+					border: 1px solid $border
 					height: 50px
 
 
@@ -341,9 +338,8 @@
 		&_search
 			display: flex
 			max-width: 525px
-			max-height: 50px
 			width: 100%
-			height: 100%
+			height: 50px
 
 			+r(1400)
 				max-width: 400px
@@ -355,7 +351,7 @@
 				position: relative
 				width: 100%
 				height: 100%
-				border: 1px solid #C4C4C4
+				border: 1px solid $border
 
 			label
 				position: absolute
@@ -382,7 +378,7 @@
 			button
 				max-width: 105px
 				width: 100%
-				border: 1px solid #C4C4C4
+				border: 1px solid $border
 				border-left: none
 				border-top-right-radius: 3px
 				border-bottom-right-radius: 3px
@@ -403,11 +399,14 @@
 					gap: 10px
 					max-width: 100%
 
+				input
+					height: 48px
+
 				button
 					max-width: 240px
 					width: 100%
 					border-radius: 0
-					border-left: 1px solid #C4C4C4
+					border-left: 1px solid $border
 					min-height: 50px
 
 		&_submenu
@@ -468,7 +467,7 @@
 				
 				a
 					justify-content: flex-start
-					border: 1px solid #C4C4C4
+					border: 1px solid $border
 					color: $title
 
 
@@ -496,19 +495,24 @@
 .main
 	grid-area: main
 	display: grid
-	grid-template: 1fr / minmax(auto, 320px) 1fr
-	grid-template-areas: 'main__sidebar' 'main__content'
+	// grid-template: 1fr / minmax(auto, 320px) 1fr
+	// grid-template: minmax(auto, 320px) 1fr / 1fr
+	// grid-template-areas: 'main__content' 'main__sidebar'
 	grid-gap: 0 50px
 	align-items: flex-start
 	max-width: 100%
 
+
 	+r(1430)
-		grid-template: 1fr / minmax(auto, 280px) 1fr
-		grid-template-areas: 'main__sidebar' 'main__content'
-		grid-gap: 0 25px
+		// grid-template: 1fr / minmax(auto, 280px) 1fr
+		// grid-template-areas: 'main__sidebar' 'main__content'
+		// grid-gap: 0 25px
+
+	+r(1200)
+		grid-template-columns: 1fr
 
 	+r(992)
-		grid-template: 1fr / 1fr
+		// grid-template: 1fr / 1fr
 		grid-template-areas: 'main__sidebar' 'main__content'
 		grid-gap: 25px
 
@@ -516,14 +520,15 @@
 		grid-area: main__sidebar
 		display: grid
 		grid-gap: 50px
+		grid-row: 1
+		grid-column: 2
 
-		+r(1430)
-			grid-gap: 25px
+		// +r(1430)
+		// 	grid-gap: 25px
 
-		+r(992)
+		+r(1200)
 			grid-row: 2
 			grid-column: 1
-			grid-template: 1fr / 1fr 1fr
 
 		+r(767)
 			grid-template: 1fr / 1fr
@@ -531,10 +536,10 @@
 	&__content
 		grid-area: main__content
 		grid-row: 1
-		grid-column: 2
+		grid-column: 1
 		display: grid
-		grid-gap: 50px
 		max-width: 100%
+		height: 100%
 
 		+r(1430)
 			grid-gap: 25px
@@ -546,7 +551,8 @@
 
 .sidebar
 	&__block
-		background-color: #282627
+		border: 1px solid $border
+
 
 		+r(767)
 			grid-column: 1 / span 2
@@ -558,8 +564,7 @@
 	&__header
 		display: flex
 		align-items: center
-		background: #414143
-		padding: 15px 30px
+		padding: 10px 20px
 		font-size: 24px
 		line-height: 1
 
@@ -577,9 +582,7 @@
 			flex-shrink: 0
 			width: 50px
 			height: 50px
-			border: 1px solid rgba(#fff, .7)
 			margin-right: 15px
-			background-color: $accent
 
 			+r(767)
 				width: 30px
@@ -589,10 +592,14 @@
 				max-width: 70%
 				max-height: 70%
 
+	p
+		font-size: 18px
+		color: $title
+
 	&__item
 		display: block
-		padding: 20px 30px
-		border-top: 1px solid #505050
+		padding: 10px 20px
+		border-top: 1px solid $border
 
 		+r(767)
 			padding: 10px 20px
@@ -602,9 +609,8 @@
 
 		&_subtitle
 			display: block
-			font-weight: 700
 			font-size: 18px
-			color: $accent
+			color: $title
 			margin-bottom: 10px
 			line-height: 1.1
 
@@ -615,15 +621,15 @@
 
 	&__banner
 		display: flex
-		justify-content: center
+		justify-content: flex-start
 		align-items: center
-		padding: 45px 20px
+		padding: 20px 30px
+		border-top: 1px solid $border
 
 		&_sale
 			color: $accent
 			line-height: 1.2
 			font-size: 52px
-			font-weight: 700
 		
 		&_btn
 			min-width: 300px
@@ -635,6 +641,8 @@
 		padding: 160px 145px
 		height: auto
 		overflow: hidden
+		height: 405px
+		margin-bottom: 40px
 
 		+r(1430)
 			padding: 160px 50px
@@ -678,7 +686,6 @@
 
 	&__wrap
 		background-color: $bg
-		padding: 30px
 
 		+r(767)
 			overflow: auto
@@ -688,10 +695,12 @@
 		display: grid
 		grid-template: 1fr / minmax(80px, auto) 2fr 1fr 1fr minmax(120px, auto)
 		gap: 20px
-		background-color: $accent
-		margin-bottom: 4px
+		// background-color: $accent
+		border: 1px solid $border
+		margin-bottom: 10px
 		padding-right: 20px
-		font-size: 24px
+		font-size: 18px
+		color: $title
 		line-height: 1.3
 
 		+r(1430)
@@ -724,11 +733,9 @@
 			grid-template: 1fr / minmax(80px, auto) 2fr 1fr 1fr minmax(120px, auto)
 			gap: 20px
 			align-items: center
-			background-color: $accent
+			border: 1px solid $border
 			margin-bottom: 4px
-			background: linear-gradient(90.35deg, #484848 7.73%, #474747 104.43%)
 			line-height: 1
-			padding-right: 20px
 			min-height: 60px
 
 			+r(1430)
@@ -748,7 +755,7 @@
 				font-size: 16px
 
 		&_number
-			font-size: 24px
+			font-size: 18px
 			font-weight: 700
 
 			+r(1430)
@@ -761,8 +768,8 @@
 				font-size: 16px
 
 		&_price
-			font-size: 32px
-			font-weight: 700
+			font-size: 26px
+			color: $title
 
 			+r(1430)
 				font-size: 20px
@@ -773,16 +780,43 @@
 			+r(992)
 				font-size: 16px
 
+			span
+				color: $text
+				margin-right: 10px
+				position: relative
+
+				&::after
+					content: ""
+					display: block
+					position: absolute
+					left: 0
+					top: 50%
+					color: red
+					width: 100%
+					height: 0
+					border-bottom: 2px solid $title
+					transform: rotate(-6deg)
+
+		&_btn
+			border-left: 1px solid $border
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+
+			a
+				color: $text
+				height: 100%
+
 		&_title
 			display: flex
 			justify-content: center
 			align-items: center
-			background-color: #ADABAE
+			border: 1px solid $border
 			min-height: 60px
-			margin-top: 20px
 			margin-bottom: 4px
 			font-size: 18px
-			color: #000
+			color: $title
 			text-align: center
 
 		&--max
@@ -792,16 +826,18 @@
 				max-height: 730px
 
 
+
 .services
 	&__header
 		display: flex
 		align-items: center
 		min-height: 70px
 		padding: 0 50px
-		margin-bottom: 4px
-		background-color: $accent
-		font-size: 24px
+		margin-bottom: 10px
+		border: 1px solid $border
+		font-size: 18px
 		line-height: 1.2
+		color: $title
 
 		+r(992)
 			padding: 0 30px
@@ -810,14 +846,18 @@
 		+r(576)
 			padding: 0 15px
 
+		&_icon
+			margin-right: 15px
+
 	&__item
 		display: flex
 		align-items: center
 		min-height: 70px
 		padding: 0px 50px
-		margin-bottom: 4px
-		background-color: #484848
+		margin-bottom: 10px
+		border: 1px solid $border
 		font-size: 18px
+		color: $title
 
 		+r(992)
 			padding: 0 30px
@@ -871,9 +911,10 @@
 
 		p
 			margin-bottom: 13px
+			color: $title
 
 		span
-			color: #AEAEAE
+			color: $text
 
 		ol
 			padding-left: 0
@@ -885,6 +926,8 @@
 				display: flex
 				align-items: center
 				margin-bottom: 13px
+				color: $title
+				
 
 				&::before
 					counter-increment: list
@@ -894,10 +937,11 @@
 					align-items: center
 					width: 50px
 					height: 50px
-					border: 1px solid #fff
+					background-color: $border
 					border-radius: 50%
 					margin-right: 10px
 					flex-shrink: 0
+					color: #191918
 
 				&:last-child
 					margin-bottom: 0
@@ -913,8 +957,8 @@
 
 	&__title
 		font-size: 42px
-		font-weight: 700
 		margin-bottom: 20px
+		color: $title
 
 		+r(1200)
 			font-size: 36px
@@ -923,9 +967,12 @@
 		text-transform: uppercase
 		font-size: 24px
 		font-weight: 400
+		color: $title
 
 
 .contacts
+	border: 1px solid $border
+	padding: 30px
 
 	&__map
 		position: relative
@@ -956,8 +1003,11 @@
 			margin-bottom: 12px
 			padding-left: 40px
 
+		a
+			color: $title
+
 		span
-			color: #AEAEAE
+			color: $text
 
 		a, span
 			+r(767)
@@ -981,6 +1031,7 @@
 
 	&__header
 		grid-template-rows: 1fr
+		padding-top: 20px
 
 		+r(992)
 			grid-template: 1fr / 1fr 1fr
@@ -991,11 +1042,14 @@
 			margin-left: auto
 
 	&__menu
+		border: 1px solid $border
+		width: 340px
+		
 		+r(992)
 			display: none
 
 		li
-			border-bottom: 1px solid #505050
+			border-bottom: 1px solid $title
 
 			&:last-child
 				border-bottom: 1px solid transparent
@@ -1004,13 +1058,11 @@
 			display: flex
 			align-items: center
 			min-height: 80px
-			font-size: 24px
-			background: #292B2A
+			font-size: 18px
 			padding: 25px 10px 25px 20px
 
 			&:hover
-				background-color: $accent
-				color: #fff
+				color: $title
 
 			+r(992)
 				min-height: 60px
@@ -1024,7 +1076,7 @@
 				flex-shrink: 1
 
 			&--active
-				background-color: $accent
+				color: $title
 
 		&--mobile
 			display: none
@@ -1072,6 +1124,7 @@
 				order: 1
 
 		&_menu
+			gap: 10px
 			+r(992)
 				grid-auto-flow: row
 				width: 100%
@@ -1085,48 +1138,74 @@
 					justify-content: flex-start
 					min-height: 60px
 
+			li
+				border: 1px solid $border
+				min-width: 200px
+
+				a
+					justify-content: flex-start
+					padding-left: 20px
+
+
+			&--left
+				
+				li
+					border: none
+
 	&__main
 		// +r(576)
 		// 	margin-left: -15px
 		// 	margin-right: -15px
 		// 	min-width: 100%
 
+		.sidebar
+			grid-column: 1
+			grid-row: 1
+
 	&__content
-		background-color: $bg
-		padding: 50px
+		// background-color: $bg
+		grid-column: 2
+		grid-row: 1
+		height: auto
+
+		.h1
+			margin-bottom: 30px
 
 		+r(1200)
 			padding: 30px
 
 		&_wrap
 			overflow: auto
+			margin-bottom: 30px
 
 		&_sale
 			display: flex
 			justify-content: space-between
 			align-items: center
 			padding: 5px 30px
-			background-color: #ADABAE
-			color: #000
+			color: $title
 			min-height: 60px
 			font-size: 18px
 			min-width: 900px
+			border: 1px solid $border
+			margin-bottom: 10px
 
 			+r(576)
 				padding: 5px 20px
 
 			a
-				color: $accent
+				color: $title
 		
 		&_label
 			display: flex
 			flex-wrap: wrap
 			align-items: center
 			padding: 5px 30px
-			background-color: #ADABAE
-			color: #000
+			color: $title
+			border: 1px solid $border
 			min-height: 60px
 			font-size: 18px
+			margin-bottom: 10px
 
 			+r(576)
 				padding: 5px 20px
@@ -1140,7 +1219,7 @@
 			grid-template: inherit
 			padding: 0 30px
 			min-width: 900px
-			font-size: 22px
+			font-size: 18px
 
 			+r(1720)
 				font-size: 18px
@@ -1159,7 +1238,7 @@
 			grid-template: inherit
 			min-height: 70px
 			padding: 5px 30px
-			font-size: 22px
+			font-size: 18px
 
 			+r(1720)
 				font-size: 18px
@@ -1198,77 +1277,100 @@
 		+r(992)
 			max-width: 100%
 
+		&_wrap
+			border: 1px solid $border
+			padding: 30px
+
 		&_line
 			margin-bottom: 20px
 
 			img
 				max-width: 250px
 
+			.btn
+				border: 1px solid $border
+				color: $text
+				font-weight: 400
+				max-width: 200px
+
 		&_label
 			width: 100%
+			color: $title
 
 		&_input
 			width: 100%
 			height: 40px
 			line-height: 40px
 			padding: 0 10px
+			border: 1px solid $border
+			background-color: $bg
+			color: $text
 
 			&::placeholder
 				line-height: 40px
 
 
 .footer
-	grid-area: footer
-	background-color: #282627
-	display: grid
-	grid-template: 1fr / minmax(auto, 150px) 1fr 1fr 1fr minmax(auto, 150px)
-	grid-template-areas: 'footer__logo' 'empty' 'footer__nav' 'empty' 'footer__sidebar'
-	grid-gap: 15px
+	display: flex
+	justify-content: space-between
 	align-items: center
-	padding: 50px
 	z-index: 2
 	max-width: 100%
 
-	+r(1430)
-		padding: 25px
+	+r(768)
+		flex-direction: column
 
-	+r(992)
-		grid-template: 1fr / minmax(auto, 150px) 1fr 1fr
-		grid-template-areas: 'footer__logo' 'footer__nav' 'footer__sidebar'
-		align-items: flex-end
-
-	+r(767)
-		grid-template-columns: auto
-
-	&__logo
-		max-width: 150px
+	&__block
+		display: flex
+		width: 100%
+		justify-content: flex-end
+		
+		+r(767)
+			flex-direction: column
+			align-items: center
 
 	&__nav
-		grid-area: footer__nav
-		grid-column: 3
-		grid-row: 1
+		display: flex
+		align-items: center
 
-		+r(992)
-			grid-column: 5
+		ul
+			display: flex
+			gap: 30px
+
+		a
+			&:hover
+				color: $title
+
+	&__logo
+		max-width: 250px
+		margin-right: 50px
+		width: 100%
 
 		+r(767)
-			grid-column: 1
-			grid-row: 2
-			align-items: flex-start
+			margin: 0
+
+		img
+			width: 100%
+
+	&__sidebar
 
 		&_menu
-			display: grid
-			grid-auto-flow: column
-			grid-gap: 85px
-			text-align: center
+			margin-left: 150px
 
-			+r(1430)
-				grid-gap: 25px
+			+r(1440)
+				margin-left: 50px
+
+			+r(992)
+				display: flex
 
 			+r(767)
-				grid-auto-flow: row
-				grid-gap: 10px
-				text-align: left
+				display: flex !important
+				margin: 0
+
+	&__lang
+
+		+r(1200)
+			display: none
 
 	&__sidebar
 		&_nav
@@ -1628,7 +1730,6 @@
 
 .accordion
 	margin-bottom: 10px
-	border-bottom: 1px solid #161B21
 
 	&:last-child
 		margin-bottom: 0
@@ -1648,11 +1749,10 @@
 			top: 50%
 			right: 25px
 			transform: translate(0, -12px) rotate(-135deg)
-			width: 24px
-			height: 24px
-			border-top: 5px solid $bg
-			border-left: 5px solid $bg
-
+			width: 20px
+			height: 20px
+			border-top: 3px solid $title
+			border-left: 3px solid $title
 			+r(1440)
 				right: auto
 				left: 15px

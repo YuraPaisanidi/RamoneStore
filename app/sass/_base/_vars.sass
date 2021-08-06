@@ -8,6 +8,7 @@ $accent: #808080
 $text: #9A9A9A
 $bg: #181D24
 $title: #ffffff
+$border: #C4C4C4
 //---------------------end-color---------------------
 
 body
@@ -28,7 +29,8 @@ body
 
 ::placeholder
 	color: #666
-	
+
+
 h1, h2, h3, h4, h5, h6
 	font-weight: 700
 	line-height: 1.2
@@ -94,13 +96,13 @@ textarea
 
 *
 	&::-webkit-scrollbar
-		width: 7px
+		width: 2px
 		height: 8px
-		background-color: #D7D6D6
+		background-color: $title
 		cursor: pointer
 
 	&::-webkit-scrollbar-thumb
-		background-color: $accent
+		background-color: $text
 
 	&::-webkit-scrollbar-thumb:hover
 		background-color: $accent
