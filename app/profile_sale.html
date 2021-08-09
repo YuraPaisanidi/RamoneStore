@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Mazera - Sale</title>
+	<title>Sale</title>
 	<meta name="description" content="Startup HTML Optimized">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.ico">
@@ -294,34 +294,38 @@
 		</main>
 
 		<footer class="footer">
-			<a href="/" class="footer__logo">
-				<img src="img/logo.svg" alt="">
-			</a>
 
-			<nav class="footer__nav">
-				<ul class="footer__nav_menu">
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Правила</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Услуги</a></li>
-					<li><a href="#">Категории</a></li>
-				</ul>
-			</nav>
+			<div class="footer__block">
+				<a href="/" class="footer__logo">
+					<img src="img/logo.svg" alt="">
+				</a>
+	
+				<nav class="footer__nav">
+					<ul class="footer__nav_menu">
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">Отзывы</a></li>
+						<li><a href="#">Правила</a></li>
+						<li><a href="#">Контакты</a></li>
+						<li><a href="#">Услуги</a></li>
+						<li><a href="#">Категории</a></li>
+					</ul>
+				</nav>
+			</div>
 
-			<nav class="footer__sidebar_nav">
-				<ul class="footer__sidebar_menu">
-					<li class="footer__sidebar_submenu">
-						<a href="javascript: void(0)">RUS</a>
-						<ul>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-						</ul>
-					</li>
+			<div class="footer__block">
+				<div class="header__lang footer__lang">
+					<a href="#" class="active">RU</a>
+					<span>/</span>
+					<a href="#">ENG</a>
+				</div>
+
+				<ul class="header__sidebar_menu footer__sidebar_menu">
+					<li><a href="#">Вход</a></li>
+					<li><a href="#">Регистрация</a></li>
 				</ul>
-			</nav> 
+			</div>
+
+
 		</footer>
 
 	</div>

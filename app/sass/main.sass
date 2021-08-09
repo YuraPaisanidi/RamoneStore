@@ -41,9 +41,6 @@
 	min-height: 50px
 	max-width: 300px
 	width: 100%
-	// border: 1px solid $accent
-	// background-color: $accent
-	// padding: 0 15px
 	font-size: 16px
 	color: #fff
 	font-weight: 600
@@ -1049,7 +1046,7 @@
 			display: none
 
 		li
-			border-bottom: 1px solid $title
+			border-bottom: 1px solid $border
 
 			&:last-child
 				border-bottom: 1px solid transparent
@@ -1057,9 +1054,9 @@
 		&_link
 			display: flex
 			align-items: center
-			min-height: 80px
+			min-height: 70px
 			font-size: 18px
-			padding: 25px 10px 25px 20px
+			padding: 20px
 
 			&:hover
 				color: $title
@@ -1163,7 +1160,6 @@
 			grid-row: 1
 
 	&__content
-		// background-color: $bg
 		grid-column: 2
 		grid-row: 1
 		height: auto
@@ -1228,8 +1224,6 @@
 				padding: 0px 20px
 
 	&__table
-		// overflow: inherit
-		// max-height: fit-content
 		min-width: 900px
 		width: 100%
 
@@ -1273,9 +1267,15 @@
 
 	&__form
 		max-width: 520px
+		border: 1px solid $border
+		padding: 30px
+		margin-bottom: 30px
 
 		+r(992)
 			max-width: 100%
+
+		&:last-child
+			margin-bottom: 0
 
 		&_wrap
 			border: 1px solid $border
@@ -1293,6 +1293,11 @@
 				font-weight: 400
 				max-width: 200px
 
+			textarea
+				background-color: $bg
+				resize: none
+				border: 1px solid $border
+
 		&_label
 			width: 100%
 			color: $title
@@ -1309,7 +1314,12 @@
 			&::placeholder
 				line-height: 40px
 
+	&__ticket
 
+		&_btn
+			border: 1px solid $border
+			margin-bottom: 30px
+			color: $text
 .footer
 	display: flex
 	justify-content: space-between
@@ -1483,6 +1493,7 @@
 		margin: auto
 		max-width: 460px
 		transform: translate(0, -150px)
+		border: 1px solid $border
 		+transition
 
 		+r(576)
@@ -1493,12 +1504,12 @@
 			justify-content: center
 			align-items: center
 			min-height: 70px
-			background-color: $accent
+			background-color: $bg
+			border-bottom: 1px solid $border
 
 			h3
-				font-size: 24px
-				font-weight: 400
-				text-align: center
+				color: $title
+				font-size: 18px
 
 		&_content
 			padding: 30px
@@ -1522,6 +1533,9 @@
 			width: 100px
 			height: 100px
 			margin: 0 auto 10px
+
+		p
+			color: $title
 
 
 .form
@@ -1551,8 +1565,11 @@
 		position: relative
 		margin-bottom: 20px
 
+		label
+			color: $title
+
 	&__error
-		color: $accent
+		color: #EA1015
 		margin-top: 20px
 		font-weight: 600
 
@@ -1578,6 +1595,8 @@
 		height: 40px
 		line-height: 40px
 		padding: 0 15px
+		border: 1px solid $border
+		background-color: $bg
 
 		&::placeholder
 			line-height: 40px
@@ -1642,6 +1661,9 @@
 		border-radius: 5px
 		font-size: 16px
 		padding: 0 15px
+		background-color: $bg
+		color: $title
+		border: 1px solid $border
 
 	&__file
 
@@ -1726,6 +1748,9 @@
 		&_button
 			@extend .btn
 			max-width: 100%
+			border: 1px solid $border
+			color: $text
+			font-weight: 400
 
 
 .accordion
