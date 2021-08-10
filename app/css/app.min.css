@@ -838,6 +838,21 @@ textarea {
   flex-direction: column;
   max-width: 100%
 }
+@media only screen and (max-width:992px) {
+  .header {
+    max-width: 768px
+  }
+}
+@media only screen and (max-width:767px) {
+  .header {
+    max-width: 576px
+  }
+}
+@media only screen and (max-width:576px) {
+  .header {
+    max-width: 480px
+  }
+}
 .header__sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -850,6 +865,11 @@ textarea {
   align-items: center;
   padding: 25px 0;
   z-index: 2
+}
+@media only screen and (max-width:992px) {
+  .header__sidebar {
+    padding: 0
+  }
 }
 .footer__sidebar_menu,
 .header__sidebar_menu {
@@ -1176,7 +1196,8 @@ textarea {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
-    max-width: 100%
+    max-width: 100%;
+    height: auto
   }
 }
 .header__nav_search--mobile input {
@@ -1297,6 +1318,11 @@ textarea {
   -ms-flex-pack: end;
   justify-content: flex-end
 }
+@media only screen and (max-width:992px) {
+  .header__lang {
+    display: none
+  }
+}
 .header__lang a,
 .header__lang span {
   font-size: 20px
@@ -1310,11 +1336,22 @@ textarea {
   grid-area: main;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: minmax(auto,320px) 50px 1fr;
+  grid-template: 1fr/minmax(auto,320px) 1fr;
+  grid-template-areas: 'main__content' 'main__sidebar';
   grid-gap: 0 50px;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
   max-width: 100%
+}
+@media only screen and (max-width:1430px) {
+  .main {
+    -ms-grid-columns: minmax(auto,280px) 25px 1fr;
+    grid-template: 1fr/minmax(auto,280px) 1fr;
+    grid-template-areas: 'main__sidebar' 'main__content';
+    grid-gap: 0 25px
+  }
 }
 @media only screen and (max-width:1200px) {
   .main {
@@ -1324,11 +1361,23 @@ textarea {
 }
 @media only screen and (max-width:992px) {
   .main {
-    grid-template-areas: 'main__sidebar' 'main__content';
+    max-width: 768px;
     grid-gap: 25px
   }
 }
+@media only screen and (max-width:767px) {
+  .main {
+    max-width: 576px
+  }
+}
+@media only screen and (max-width:576px) {
+  .main {
+    max-width: 480px
+  }
+}
 .main__sidebar {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: main__sidebar;
   display: -ms-grid;
   display: grid;
@@ -1346,14 +1395,21 @@ textarea {
     grid-column: 1
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:992px) {
   .main__sidebar {
-    -ms-grid-rows: 1fr;
-    -ms-grid-columns: 1fr;
-    grid-template: 1fr/1fr
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 30px
   }
 }
 .main__content {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: main__content;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -1361,10 +1417,9 @@ textarea {
   grid-column: 1;
   display: -ms-grid;
   display: grid;
-  max-width: 100%;
-  height: 100%
+  max-width: 100%
 }
-@media only screen and (max-width:992px) {
+@media only screen and (max-width:1430px) {
   .main__sidebar {
     -ms-grid-row: 1;
     -ms-grid-column: 1
@@ -1379,13 +1434,18 @@ textarea {
     grid-gap: 25px
   }
 }
-@media only screen and (max-width:992px) {
+@media only screen and (max-width:767px) {
   .main__content {
-    -ms-grid-row: 1;
-    grid-row: 1;
-    -ms-grid-column: 1;
-    grid-column: 1
+    max-width: 576px
   }
+}
+@media only screen and (max-width:576px) {
+  .main__content {
+    max-width: 480px
+  }
+}
+.index {
+  grid-template: none
 }
 .sidebar__block {
   border: 1px solid #c4c4c4
@@ -1502,6 +1562,11 @@ textarea {
 .sidebar__banner_btn {
   min-width: 300px
 }
+@media only screen and (max-width:576px) {
+  .sidebar__banner {
+    max-width: 480px
+  }
+}
 .content__bunner {
   position: relative;
   padding: 160px 145px;
@@ -1513,6 +1578,11 @@ textarea {
 @media only screen and (max-width:1430px) {
   .content__bunner {
     padding: 160px 50px
+  }
+}
+@media only screen and (max-width:992px) {
+  .content__bunner {
+    margin-bottom: 0
   }
 }
 @media only screen and (max-width:480px) {
@@ -1568,8 +1638,7 @@ textarea {
 }
 @media only screen and (max-width:767px) {
   .content__wrap {
-    overflow: auto;
-    padding: 15px
+    overflow: auto
   }
 }
 .content__header {
@@ -1599,16 +1668,44 @@ textarea {
 }
 @media only screen and (max-width:992px) {
   .content__header {
-    font-size: 16px
+    font-size: 16px;
+    margin-bottom: 0
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:576px) {
   .content__header {
-    min-width: 750px
+    max-width: 480px;
+    overflow: auto
+  }
+}
+@media only screen and (max-width:480px) {
+  .content__header {
+    max-width: 320px;
+    font-size: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
   }
 }
 .content__header p {
   padding: 20px 0
+}
+@media only screen and (max-width:480px) {
+  .content__header p:first-child,
+  .content__header p:last-child {
+    display: none
+  }
+}
+@media only screen and (max-width:480px) {
+  .content__header p {
+    padding: 10px 0
+  }
 }
 .content__table {
   overflow: auto;
@@ -2014,9 +2111,13 @@ textarea {
 }
 @media only screen and (max-width:992px) {
   .profile__header {
-    -ms-grid-rows: 1fr;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template: 1fr/1fr 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center
@@ -2027,8 +2128,7 @@ textarea {
   margin-left: auto
 }
 .profile__menu {
-  border: 1px solid #c4c4c4;
-  width: 340px
+  border: 1px solid #c4c4c4
 }
 @media only screen and (max-width:992px) {
   .profile__menu {
@@ -2194,9 +2294,10 @@ textarea {
 .profile__content .h1 {
   margin-bottom: 30px
 }
-@media only screen and (max-width:1200px) {
+@media only screen and (max-width:992px) {
   .profile__content {
-    padding: 30px
+    -ms-grid-column: 1;
+    grid-column: 1
   }
 }
 .profile__content_wrap {
@@ -2324,7 +2425,7 @@ textarea {
   grid-template-columns: repeat(2,1fr)
 }
 .profile__form {
-  max-width: 520px;
+  max-width: 100%;
   border: 1px solid #c4c4c4;
   padding: 30px;
   margin-bottom: 30px
@@ -2342,7 +2443,8 @@ textarea {
   padding: 30px
 }
 .profile__form_line {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  max-width: 520px
 }
 .profile__form_line img {
   max-width: 250px
@@ -2403,15 +2505,8 @@ textarea {
   -ms-flex-align: center;
   align-items: center;
   z-index: 2;
-  max-width: 100%
-}
-@media only screen and (max-width:768px) {
-  .footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
-  }
+  max-width: 100%;
+  background-color: #181d24
 }
 .footer__block {
   display: -webkit-box;
@@ -2422,16 +2517,10 @@ textarea {
   -ms-flex-pack: end;
   justify-content: flex-end
 }
-@media only screen and (max-width:767px) {
-  .footer__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center
-  }
+.footer__block:first-child {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start
 }
 .footer__nav {
   display: -webkit-box;
@@ -2440,6 +2529,11 @@ textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center
+}
+@media only screen and (max-width:992px) {
+  .footer__nav {
+    display: none
+  }
 }
 .footer__nav ul {
   display: -webkit-box;
@@ -2452,6 +2546,7 @@ textarea {
 }
 .footer__logo {
   max-width: 250px;
+  min-width: 150px;
   margin-right: 50px;
   width: 100%
 }
@@ -3017,6 +3112,9 @@ textarea {
   overflow: hidden;
   width: 100%;
   height: 0
+}
+.accordion__content--profile {
+  overflow: visible
 }
 .accordion--active .accordion__header span {
   -webkit-transform: translate(0,-5px) rotate(45deg);
