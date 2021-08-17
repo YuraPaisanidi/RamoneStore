@@ -31,6 +31,10 @@
 	+r(576)
 		max-width: 480px
 
+	+r(480)
+		max-width: 320px
+		padding: 0
+
 // -----BUTTON-----
 .btn
 	position: relative
@@ -163,6 +167,9 @@
 	+r(576)
 		max-width: 480px
 
+	+r(480)
+		max-width: 320px
+
 	&__sidebar
 		display: flex
 		justify-content: space-between
@@ -171,7 +178,7 @@
 		z-index: 2
 
 		+r(992)
-			padding: 0
+			padding: 0 5px
 
 		&_menu
 			display: flex
@@ -466,6 +473,7 @@
 
 		&--active
 			left: 0 !important
+			width: 100%
 
 	&__links
 		display: flex
@@ -516,6 +524,9 @@
 	+r(576)
 		max-width: 480px
 
+	+r(480)
+		max-width: 320px
+
 	&__sidebar
 		grid-area: main__sidebar
 		display: grid
@@ -548,6 +559,9 @@
 		
 		+r(576)
 			max-width: 480px
+
+		+r(480)
+			max-width: 320px
 
 
 .index
@@ -641,6 +655,9 @@
 
 		+r(576)
 			max-width: 480px
+
+		+r(480)
+			max-width: 320px
 
 
 .content
@@ -1002,6 +1019,9 @@
 	border: 1px solid $border
 	padding: 30px
 
+	+r(480)
+		max-width: 320px
+
 	&__map
 		position: relative
 		width: 100%
@@ -1012,6 +1032,7 @@
 		img
 			max-height: 500px
 			object-fit: cover
+			width: 100%
 
 	&__subtitle
 		font-size: 24px
@@ -1035,8 +1056,12 @@
 			color: $text
 
 		a, span
+
 			+r(767)
 				display: block
+
+			+r(480)
+				font-size: 14px
 
 		img
 			position: absolute
@@ -1356,6 +1381,9 @@
 	max-width: 100%
 	background-color: $bg
 
+	+r(480)
+		max-width: 320px
+
 	&__block
 		display: flex
 		width: 100%
@@ -1405,6 +1433,10 @@
 			+r(767)
 				display: flex !important
 				margin: 0
+
+		&_nav
+			+r(992)
+				margin: 0 !important
 
 	&__lang
 

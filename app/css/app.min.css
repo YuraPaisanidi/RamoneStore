@@ -681,6 +681,12 @@ textarea {
     max-width: 480px
   }
 }
+@media only screen and (max-width:480px) {
+  .wrapper {
+    max-width: 320px;
+    padding: 0
+  }
+}
 .btn,
 .form__btn_button {
   position: relative;
@@ -853,6 +859,11 @@ textarea {
     max-width: 480px
   }
 }
+@media only screen and (max-width:480px) {
+  .header {
+    max-width: 320px
+  }
+}
 .header__sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -868,7 +879,7 @@ textarea {
 }
 @media only screen and (max-width:992px) {
   .header__sidebar {
-    padding: 0
+    padding: 0 5px
   }
 }
 .footer__sidebar_menu,
@@ -1294,7 +1305,8 @@ textarea {
   color: #fff
 }
 .header__nav--active {
-  left: 0!important
+  left: 0!important;
+  width: 100%
 }
 .header__links {
   display: -webkit-box;
@@ -1375,6 +1387,11 @@ textarea {
     max-width: 480px
   }
 }
+@media only screen and (max-width:480px) {
+  .main {
+    max-width: 320px
+  }
+}
 .main__sidebar {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -1442,6 +1459,11 @@ textarea {
 @media only screen and (max-width:576px) {
   .main__content {
     max-width: 480px
+  }
+}
+@media only screen and (max-width:480px) {
+  .main__content {
+    max-width: 320px
   }
 }
 .index {
@@ -1565,6 +1587,11 @@ textarea {
 @media only screen and (max-width:576px) {
   .sidebar__banner {
     max-width: 480px
+  }
+}
+@media only screen and (max-width:480px) {
+  .sidebar__banner {
+    max-width: 320px
   }
 }
 .content__bunner {
@@ -2043,6 +2070,11 @@ textarea {
   border: 1px solid #c4c4c4;
   padding: 30px
 }
+@media only screen and (max-width:480px) {
+  .contacts {
+    max-width: 320px
+  }
+}
 .contacts__map {
   position: relative;
   width: 100%;
@@ -2052,7 +2084,8 @@ textarea {
 .contacts__map img {
   max-height: 500px;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  width: 100%
 }
 .contacts__subtitle {
   font-size: 24px;
@@ -2081,6 +2114,12 @@ textarea {
   .contacts__desc a,
   .contacts__desc span {
     display: block
+  }
+}
+@media only screen and (max-width:480px) {
+  .contacts__desc a,
+  .contacts__desc span {
+    font-size: 14px
   }
 }
 .contacts__desc img {
@@ -2502,6 +2541,11 @@ textarea {
   max-width: 100%;
   background-color: #181d24
 }
+@media only screen and (max-width:480px) {
+  .footer {
+    max-width: 320px
+  }
+}
 .footer__block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2573,6 +2617,11 @@ textarea {
     display: -ms-flexbox!important;
     display: flex!important;
     margin: 0
+  }
+}
+@media only screen and (max-width:992px) {
+  .footer__sidebar_nav {
+    margin: 0!important
   }
 }
 @media only screen and (max-width:1200px) {
