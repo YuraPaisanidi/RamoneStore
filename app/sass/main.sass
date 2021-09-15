@@ -330,6 +330,9 @@
 					border: 1px solid $border
 					height: 50px
 
+				&:first-child
+					padding-left: 0
+
 
 				&:hover
 					color: #fff
@@ -493,8 +496,8 @@
 		a, span
 			font-size: 20px
 
-		.active
-			color: $title
+.active
+	color: $title
 
 
 .main
@@ -533,10 +536,12 @@
 		grid-gap: 50px
 		grid-row: 1
 		grid-column: 2
+		max-width: 345px
 
 		+r(1200)
 			grid-row: 2
 			grid-column: 1
+			max-width: 100%
 
 		+r(992)
 			display: flex
@@ -549,6 +554,7 @@
 		grid-column: 1
 		display: grid
 		max-width: 100%
+		margin-bottom: 20px
 
 
 		+r(1430)
@@ -1407,6 +1413,49 @@
 			&:hover
 				color: $title
 
+		&_submenu
+
+			&:hover
+				ul
+					visibility: visible
+					z-index: 100
+
+			ul
+				position: absolute
+				top: 75%
+				visibility: hidden
+				width: 100%
+				max-width: 150px
+				box-shadow: 0 0 2px 0 rgba(#fff, .33)
+				height: auto
+				display: flex
+				flex-direction: column
+				background: $bg
+				+transition
+
+				li
+					text-align: center
+
+			&--index
+				ul
+					top: 60%
+
+			&--addticket
+				ul
+					top: 69%
+			
+			&--edit
+				ul
+					top: 67%
+			
+			&--referral
+				ul
+					top: 71%
+
+			&--sale
+				ul
+					top: 83%
+
 	&__logo
 		max-width: 250px
 		min-width: 150px
@@ -1658,6 +1707,7 @@
 		padding: 0 15px
 		border: 1px solid $border
 		background-color: $bg
+		color: #fff
 
 		&::placeholder
 			line-height: 40px

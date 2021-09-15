@@ -1115,6 +1115,9 @@ textarea {
     height: 50px
   }
 }
+.header__nav_menu a:first-child {
+  padding-left: 0
+}
 .header__nav_menu a:hover {
   color: #fff
 }
@@ -1339,7 +1342,7 @@ textarea {
 .header__lang span {
   font-size: 20px
 }
-.header__lang .active {
+.active {
   color: #fff
 }
 .main {
@@ -1402,14 +1405,16 @@ textarea {
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 2;
-  grid-column: 2
+  grid-column: 2;
+  max-width: 345px
 }
 @media only screen and (max-width:1200px) {
   .main__sidebar {
     -ms-grid-row: 2;
     grid-row: 2;
     -ms-grid-column: 1;
-    grid-column: 1
+    grid-column: 1;
+    max-width: 100%
   }
 }
 @media only screen and (max-width:992px) {
@@ -1434,7 +1439,8 @@ textarea {
   grid-column: 1;
   display: -ms-grid;
   display: grid;
-  max-width: 100%
+  max-width: 100%;
+  margin-bottom: 20px
 }
 @media only screen and (max-width:1430px) {
   .main__sidebar {
@@ -2582,6 +2588,49 @@ textarea {
 .footer__nav a:hover {
   color: #fff
 }
+.footer__nav_submenu:hover ul {
+  visibility: visible;
+  z-index: 100
+}
+.footer__nav_submenu ul {
+  position: absolute;
+  top: 75%;
+  visibility: hidden;
+  width: 100%;
+  max-width: 150px;
+  -webkit-box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
+  box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #181d24;
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s
+}
+.footer__nav_submenu ul li {
+  text-align: center
+}
+.footer__nav_submenu--index ul {
+  top: 60%
+}
+.footer__nav_submenu--addticket ul {
+  top: 69%
+}
+.footer__nav_submenu--edit ul {
+  top: 67%
+}
+.footer__nav_submenu--referral ul {
+  top: 71%
+}
+.footer__nav_submenu--sale ul {
+  top: 83%
+}
 .footer__logo {
   max-width: 250px;
   min-width: 150px;
@@ -2900,7 +2949,8 @@ textarea {
   line-height: 40px;
   padding: 0 15px;
   border: 1px solid #c4c4c4;
-  background-color: #181d24
+  background-color: #181d24;
+  color: #fff
 }
 .form__input::-webkit-input-placeholder {
   line-height: 40px;
