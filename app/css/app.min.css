@@ -607,11 +607,18 @@ select::placeholder,
 textarea::placeholder {
   color: #9a9a9a
 }
+input:focus,
+option:focus,
+select:focus,
+textarea:focus {
+  border-color: #fff!important
+}
 textarea {
   width: 100%;
   height: 190px;
   padding: 5px 10px;
-  size: none
+  size: none;
+  color: #9a9a9a
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -1229,6 +1236,10 @@ textarea {
   -ms-transform: translate(0,5px) rotate(45deg);
   transform: translate(0,5px) rotate(45deg)
 }
+.header__nav_submenu:hover ul {
+  visibility: visible;
+  display: block!important
+}
 .header__nav_submenu a::after {
   width: 11px;
   height: 11px;
@@ -1243,6 +1254,15 @@ textarea {
     height: 7px
   }
 }
+.header__nav_submenu ul {
+  visibility: hidden;
+  display: none!important
+}
+.header__nav_submenu ul li {
+  padding-left: 20px;
+  background-color: #181d24;
+  min-width: 200px
+}
 .header__nav_submenu ul a {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -1256,6 +1276,17 @@ textarea {
     min-height: 50px;
     font-size: 14px
   }
+}
+.header__nav_submenu--footer a::after {
+  display: none
+}
+.header__nav_submenu--footer ul {
+  bottom: 100%;
+  top: auto;
+  width: 220px!important
+}
+.header__nav_submenu--footer ul li {
+  padding: 5px 0 5px 20px
 }
 .header__nav--mobile_header {
   display: none
@@ -2587,49 +2618,6 @@ textarea {
 }
 .footer__nav a:hover {
   color: #fff
-}
-.footer__nav_submenu:hover ul {
-  visibility: visible;
-  z-index: 100
-}
-.footer__nav_submenu ul {
-  position: absolute;
-  top: 75%;
-  visibility: hidden;
-  width: 100%;
-  max-width: 150px;
-  -webkit-box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
-  box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background: #181d24;
-  -webkit-transition: all .6s;
-  -o-transition: all .6s;
-  transition: all .6s
-}
-.footer__nav_submenu ul li {
-  text-align: center
-}
-.footer__nav_submenu--index ul {
-  top: 60%
-}
-.footer__nav_submenu--addticket ul {
-  top: 69%
-}
-.footer__nav_submenu--edit ul {
-  top: 67%
-}
-.footer__nav_submenu--referral ul {
-  top: 71%
-}
-.footer__nav_submenu--sale ul {
-  top: 83%
 }
 .footer__logo {
   max-width: 250px;
